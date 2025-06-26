@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -20,6 +19,7 @@ import SmartBuilder from "./pages/ai/SmartBuilder";
 import UserManagement from "./pages/users/UserManagement";
 import DeploymentCenter from "./pages/deployment/DeploymentCenter";
 import SystemSettings from "./pages/settings/SystemSettings";
+import Builder from "./pages/Builder";
 
 const queryClient = new QueryClient();
 
@@ -47,6 +47,7 @@ const App = () => (
               <Route path="deployment" element={<DeploymentCenter />} />
               <Route path="settings" element={<SystemSettings />} />
             </Route>
+            <Route path="/builder" element={<Builder />} />
           </Routes>
         </SidebarProvider>
       </BrowserRouter>
