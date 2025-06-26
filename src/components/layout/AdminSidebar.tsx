@@ -2,7 +2,7 @@
 import { NavLink } from "react-router-dom";
 import {
   Home, BarChart3, Palette, Box, Bot, Users, Rocket, Settings,
-  Zap, Grid2X2, Layers, LayoutDashboard, Workflow, Monitor
+  Zap, Grid2X2, Layers, LayoutDashboard, Monitor, Workflow
 } from "lucide-react";
 import {
   Sidebar,
@@ -81,7 +81,7 @@ const AdminSidebar = () => {
               <SidebarMenu>
                 {group.items.map((item) => (
                   <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton asChild className="group">
+                    <SidebarMenuButton asChild>
                       <NavLink 
                         to={item.url}
                         className={({ isActive }) => 
@@ -92,7 +92,7 @@ const AdminSidebar = () => {
                           }`
                         }
                       >
-                        <item.icon className="w-5 h-5" />
+                        <item.icon className="w-5 h-5 opacity-100" />
                         <span className="font-medium">{item.title}</span>
                         {item.badge && (
                           <Badge className="ml-auto text-xs bg-green-100 text-green-700 border-green-200">
