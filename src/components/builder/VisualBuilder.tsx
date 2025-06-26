@@ -1,4 +1,3 @@
-
 import { useState, useRef, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -29,12 +28,12 @@ const VisualBuilder = () => {
   const { addComponent } = useDesignSystemStore();
 
   const tools = [
-    { type: 'div', icon: Square, label: 'Container' },
-    { type: 'button', icon: MousePointer, label: 'Botão' },
-    { type: 'input', icon: Type, label: 'Input' },
-    { type: 'text', icon: Type, label: 'Texto' },
-    { type: 'image', icon: Image, label: 'Imagem' },
-    { type: 'card', icon: Layout, label: 'Card' }
+    { type: 'div' as const, icon: Square, label: 'Container' },
+    { type: 'button' as const, icon: MousePointer, label: 'Botão' },
+    { type: 'input' as const, icon: Type, label: 'Input' },
+    { type: 'text' as const, icon: Type, label: 'Texto' },
+    { type: 'image' as const, icon: Image, label: 'Imagem' },
+    { type: 'card' as const, icon: Layout, label: 'Card' }
   ];
 
   const addElement = (type: BuilderElement['type'], position: { x: number; y: number }) => {
@@ -227,7 +226,7 @@ ${elements.map(elementToJSX).join('\n')}
         name,
         category: 'Generated',
         code,
-        preview: 'generated',
+        preview: '🔧',
         props: {},
         status: 'alpha'
       });

@@ -160,16 +160,17 @@ const SmartBuilder = () => {
       return;
     }
 
-    const name = prompt("Nome do componente:") || "Componente IA";
+    const componentName = window.prompt("Nome do componente:") || "Componente IA";
     addComponent({
-      name,
+      name: componentName,
       category: "AI Generated",
       code: generatedCode,
       preview: "🤖",
+      props: {},
       status: "alpha"
     });
     
-    toast.success(`Componente "${name}" salvo na biblioteca!`);
+    toast.success(`Componente "${componentName}" salvo na biblioteca!`);
   };
 
   const exportCode = () => {
